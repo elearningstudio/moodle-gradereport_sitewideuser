@@ -146,7 +146,7 @@ if($formsubmitted === "Yes") {
         $selectedcourses[] = $value;
     }
     $courselist = implode(",", $selectedcourses);
-    $sql = "select * FROM mdl_course WHERE id IN(".$courselist.") ORDER BY shortname";
+    $sql = "select * FROM ".$CFG->prefix."course WHERE id IN(".$courselist.") ORDER BY shortname";
     $courses = $DB->get_records_sql($sql);
 	
     foreach ($courses as $thiscourse) {
